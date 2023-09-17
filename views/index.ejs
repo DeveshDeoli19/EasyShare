@@ -10,7 +10,8 @@
 <body>
   <% if (locals.fileLink != null) { %>
     <div style="margin-bottom: 1rem;">
-      <a href="<%= locals.fileLink %>">Click here to download!!!</a>
+      Follow the link to download
+      <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
     </div>
   <% } %>
   <% if (locals.txt != null) { %>
