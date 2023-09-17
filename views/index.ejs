@@ -4,20 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>EasyShare♾️</title>
+  <link rel="icon" href="{% ../public/favicon.ico %}"  type="image/x-icon">
 </head>
 <body>
   <% if (locals.fileLink != null) { %>
     <div style="margin-bottom: 1rem;">
-      Your file is upload
-      <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+      <a href="<%= locals.fileLink %>">Click here to download!!!</a>
+    </div>
+  <% } %>
+  <% if (locals.txt != null) { %>
+    <div style="margin-bottom: 1rem;">
+      Choose different key.
     </div>
   <% } %>
   <form action="/upload" method="post" style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: 0 auto;" enctype="multipart/form-data">
     <label for="file">File:</label>
     <input type="file" id="file" name="file" required />
+    <label for="number">uniqueKey:</label>
+    <input type="number" id="number" name="number" required placeholder="Example: 123"/>
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" />
+    <input type="password" id="password" name="password"  required/>
     <button style="grid-column: span 2;" type="submit">Share</button>
   </form>
 </body>

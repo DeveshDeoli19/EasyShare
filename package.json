@@ -1,9 +1,10 @@
 {
-  "name": "file-sharing-node",
+  "name": "file-sharing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "server.js",
     "devStart": "nodemon server.js"
   },
   "keywords": [],
