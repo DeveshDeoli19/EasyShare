@@ -3,7 +3,7 @@ const multer = require("multer");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const File = require("./models/File");
-
+const fs = require ('fs')
 
 const express = require("express");
 const app = express();
@@ -75,6 +75,7 @@ async function handleDownload(req, res) {
   res.download(file.path, file.originalName);
 
   await File.deleteOne({ uniqueKey })
+  fs.unlinkSync(`${file.path}`)
 }
 
 app.listen(process.env.PORT, () => {
